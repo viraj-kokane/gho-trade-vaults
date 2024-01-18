@@ -8,7 +8,25 @@ GHO Trade Vaults introduces an innovative approach to DeFi, allowing users to tr
 
 ## Detailed Description
 
-The platform utilizes a unique system where users create vaults for trading digital assets at fixed prices using GHO tokens. This approach eliminates market slippage, offering a stable and predictable trading environment. Users can participate as either sellers or buyers, depositing their assets or GHO tokens into the vaults for trading.
+Our project, GHO Trade Vaults, revolutionizes token trading within the decentralized finance (DeFi) space. It's designed to eliminate slippage by allowing users to trade digital assets at predetermined prices, using GHO tokens as the standard currency for transactions.
+
+Core Functionality:
+
+GHO Trade Vaults: Users can create or participate in a GHO Trade Vault. These vaults are versatile trading hubs where any digital asset can be exchanged for GHO tokens at fixed prices set by the sellers.
+
+Pre-Determined Pricing: Sellers have the autonomy to set their desired selling prices for assets, which can be above or below the current market value, enabling more strategic trading opportunities.
+
+Multi-User Vaults: A single GHO Trade Vault can be utilized by multiple participants. Once a vault is created, it can be reused, allowing various users to engage in trading the same pair of assets.
+
+Dynamic Asset and Token Management:
+
+When a vault lacks GHO tokens but has asset tokens, users can deposit their assets and receive Asset Box Tokens in return. These tokens represent a claim to GHO tokens once other participants deposit them into the vault. Conversely, if a vault contains GHO tokens but lacks asset tokens, participants can deposit GHO and receive Cash Receipt Tokens. These tokens can be used to claim asset tokens when they become available in the vault. Decentralized Trading Mechanism: The platform operates as a decentralized order book, allowing peer-to-peer transactions without intermediaries, enhancing transparency and security in trading.
+
+Advantages:
+
+No Slippage: Fixed-price trading eliminates the problem of slippage, common in variable price exchanges. Flexibility and Accessibility: The ability to set prices and the reusability of vaults make the platform highly flexible and accessible to a wide range of traders. Enhanced Liquidity: The multi-user approach to each vault enhances liquidity, making it easier to find matching trades. Innovative Token Mechanism: The use of Asset Box Tokens and Cash Receipt Tokens ensures continuous trading even when a vault is temporarily unbalanced in its asset-GHO ratio. Target Audience:
+
+This platform caters to cryptocurrency traders, DeFi enthusiasts, and anyone interested in a more predictable and controlled trading environment, especially those looking to trade at their own set prices without the concern of market volatility affecting their transactions.
 
 ### How it Works
 
