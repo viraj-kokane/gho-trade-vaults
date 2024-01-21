@@ -148,7 +148,51 @@ contract ERC20Detailed is ERC20 {
     }
 }
 
+library SafeMath {
+
+  /**
+  * @dev Multiplies two numbers, throws on overflow.
+  */
+  function mul(uint256 a, uint256 b) internal pure returns (uint256 c) {
+    if (a == 0) {
+      return 0;
+    }
+    c = a * b;
+    assert(c / a == b);
+    return c;
+  }
+
+  /**
+  * @dev Integer division of two numbers, truncating the quotient.
+  */
+  function div(uint256 a, uint256 b) internal pure returns (uint256) {
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
+    // uint256 c = a / b;
+    // assert(a == b * c + a % b); // There is no case in which this doesn't hold
+    return a / b;
+  }
+
+  /**
+  * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
+  */
+  function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+    assert(b <= a);
+    return a - b;
+  }
+
+  /**
+  * @dev Adds two numbers, throws on overflow.
+  */
+  function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
+    c = a + b;
+    assert(c >= a);
+    return c;
+  }
+}
+
 contract TradeVault is ERC20Detailed {
+
+    using SafeMath for uint256;
     
     uint256 public cashDecimals;
     uint256 public assetTokenMultiplier;
@@ -187,10 +231,10 @@ contract TradeVault is ERC20Detailed {
     }
         
     constructor (address cashAddress,address assetTokenAddress,uint256 _assetToCashRate,uint256 cashCap,string memory name,string memory symbol) 
-    public ERC20Detailed(name, symbol, 18)  
+    ERC20Detailed(name, symbol, 18)  
     {
         require(msg.sender != address(0), "Zero address cannot be owner/contract deployer");
-        owner = msg.sender;
+        owner = payable(msg.sender);
         require(assetTokenAddress != address(0), "assetToken is the zero address");
         require(cashAddress != address(0), "cash is the zero address");
         require(_assetToCashRate != 0, "Asset to cash rate can't be zero");
