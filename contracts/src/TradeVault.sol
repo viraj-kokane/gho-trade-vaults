@@ -204,7 +204,7 @@ contract TradeVault is ERC20Detailed {
     uint256 public assetToCashRate;
     uint256 public cashValuationCap;
 
-    address public ghoTokenAddressSepolia = "0xc4bF5CbDaBE595361438F8c6a187bDc330539c60";
+    address public ghoTokenAddressSepolia = 0xc4bF5CbDaBE595361438F8c6a187bDc330539c60;
     
     event ValuationCapUpdated(uint256 cashCap);
     event OwnerChanged(address indexed newOwner);

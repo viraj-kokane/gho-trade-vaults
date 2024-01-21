@@ -1,6 +1,9 @@
 'use client';
 import { WagmiConfig, createConfig } from "wagmi";
 import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
+import { mainnet, polygon, optimism, arbitrum, sepolia } from "wagmi/chains";
+
+const chains = [mainnet, polygon, optimism, arbitrum, sepolia];
 
 const config = createConfig(
   getDefaultConfig({
@@ -11,6 +14,7 @@ const config = createConfig(
     appDescription: "GHO Trade Vaults introduces an innovative approach to DeFi, allowing users to trade digital assets at predetermined prices. This platform is aimed at providing a secure and stable trading experience, free from the fluctuations and unpredictability of traditional market pricing.",
     appUrl: "https://family.co", 
     appIcon: "https://family.co/logo.png", 
+    chains
   }),
 );
 
