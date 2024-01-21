@@ -203,6 +203,8 @@ contract TradeVault is ERC20Detailed {
     
     uint256 public assetToCashRate;
     uint256 public cashValuationCap;
+
+    address public ghoTokenAddressSepolia = "0xc4bF5CbDaBE595361438F8c6a187bDc330539c60";
     
     event ValuationCapUpdated(uint256 cashCap);
     event OwnerChanged(address indexed newOwner);
@@ -216,7 +218,6 @@ contract TradeVault is ERC20Detailed {
     event Received(address sender, uint256 amount);
 
     receive() external payable {
-        // Logic to handle Ether received
         emit Received(msg.sender, msg.value);
     }
     fallback() external payable {
@@ -230,15 +231,14 @@ contract TradeVault is ERC20Detailed {
         _;
     }
         
-    constructor (address cashAddress,address assetTokenAddress,uint256 _assetToCashRate,uint256 cashCap,string memory name,string memory symbol) 
+    constructor (address assetTokenAddress,uint256 _assetToCashRate,uint256 cashCap,string memory name,string memory symbol) 
     ERC20Detailed(name, symbol, 18)  
     {
         require(msg.sender != address(0), "Zero address cannot be owner/contract deployer");
         owner = payable(msg.sender);
         require(assetTokenAddress != address(0), "assetToken is the zero address");
-        require(cashAddress != address(0), "cash is the zero address");
         require(_assetToCashRate != 0, "Asset to cash rate can't be zero");
-        cash = ERC20Detailed(cashAddress);
+        cash = ERC20Detailed(ghoTokenAddressSepolia);
         assetToken = ERC20Detailed(assetTokenAddress);
         cashDecimals = cash.decimals();
         assetTokenMultiplier = (10**uint256(assetToken.decimals()));
